@@ -60,7 +60,7 @@ function registerCurrency(settingName, originalName, originalAbrv, altRemove) {
         name: originalName + " New Icon File Path",
         scope: "world",
         config: !isRemoved,
-        default: "-",
+        default: "",
         type: String,
         onChange: () => patchCurrencies(),
     });
