@@ -14,21 +14,6 @@ function swapDnd5eIcon(currency, altAbrv) {
         ?.addClass(` ${getCurrencySettings()[altAbrv].toLowerCase()}`);
 }
 
-/** Alters currency on the given character sheet. */
-function alterCharacterCurrency(html) {
-    changeText(html, "pp", ALT_ABRV.PP);
-    changeText(html, "gp", ALT_ABRV.GP);
-    changeText(html, "ep", ALT_ABRV.EP);
-    changeText(html, "sp", ALT_ABRV.SP);
-    changeText(html, "cp", ALT_ABRV.CP);
-
-    swapDnd5eIcon(html, "cp", ALT_ABRV.CP);
-    swapDnd5eIcon(html, "sp", ALT_ABRV.SP);
-    swapDnd5eIcon(html, "ep", ALT_ABRV.EP);
-    swapDnd5eIcon(html, "gp", ALT_ABRV.GP);
-    swapDnd5eIcon(html, "pp", ALT_ABRV.PP);
-}
-
 // Compatibility: Let's Trade 5E
 
 /** Alters currency abbreviations on trade dialog chat message. */

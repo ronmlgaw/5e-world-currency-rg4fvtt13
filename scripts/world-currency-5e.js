@@ -31,6 +31,13 @@ const ALT_ABRV = {
     GP: "gpAltAbrv",
     PP: "ppAltAbrv",
 };
+const ALT_ICON = {
+    CP: "cpAltIcon",
+    SP: "spAltIcon",
+    EP: "epAltIcon",
+    GP: "gpAltIcon",
+    PP: "ppAltIcon",
+};
 
 /** Gets the currencies specified by the user and returns them as an object.*/
 function getCurrencySettings() {
@@ -55,6 +62,11 @@ function getCurrencySettings() {
         epAltAbrv: game.settings.get(WORLD_CURRENCY_5E, ALT_ABRV.EP),
         gpAltAbrv: game.settings.get(WORLD_CURRENCY_5E, ALT_ABRV.GP),
         ppAltAbrv: game.settings.get(WORLD_CURRENCY_5E, ALT_ABRV.PP),
+        cpAltIcon: game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.CP),
+        spAltIcon: game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.SP),
+        epAltIcon: game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.EP),
+        gpAltIcon: game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.GP),
+        ppAltIcon: game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.PP),
     };
 }
 
@@ -108,11 +120,14 @@ function patchCurrencies() {
 /** Removes the currency converter from the given character sheet. */
 function removeConvertCurrency(html) {
     // dnd5e 4
-    html.find(`[class="currency"]`)?.find(`[class="item-action unbutton"]`)?.remove();
+    html
+        .find(`[class="currency"]`)
+        ?.find(`[class="item-action unbutton"]`)
+        ?.remove();
 }
 
 /** Removes specified currency from character sheet */
-function removeCurrency(html, currency) {   
+function removeCurrency(html, currency) {
     // dnd5e 4
     html.find(`[class="currency"]`)?.find(`[aria-label="${currency}"]`)?.remove();
 }
@@ -138,11 +153,58 @@ function removeCurrencies(html) {
     }
 }
 
+/** Change currency icons in character sheet */
+function changeCurrencyIcon(html, currency, icon) {
+    // dnd5e 4
+    for (let h of html.find(`[class="currency ${currency}"]`)) {
+        h.style.backgroundImage = `url('${icon}')`;
+    }
+}
+
+function changeCurrencyIcons(html) {
+    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.CP) != "") {
+        changeCurrencyIcon(
+            html,
+            "cp",
+            game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.CP)
+        );
+    }
+    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.SP) != "") {
+        changeCurrencyIcon(
+            html,
+            "sp",
+            game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.SP)
+        );
+    }
+    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.EP) != "") {
+        changeCurrencyIcon(
+            html,
+            "ep",
+            game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.EP)
+        );
+    }
+    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.GP) != "") {
+        changeCurrencyIcon(
+            html,
+            "gp",
+            game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.GP)
+        );
+    }
+    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.PP) != "") {
+        changeCurrencyIcon(
+            html,
+            "pp",
+            game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.PP)
+        );
+    }
+}
+
 export {
     getCurrencySettings,
     patchCurrencies,
     removeConvertCurrency,
     removeCurrencies,
+    changeCurrencyIcons,
     WORLD_CURRENCY_5E,
     ALT_REMOVE,
     ALT,

@@ -56,6 +56,14 @@ function registerCurrency(settingName, originalName, originalAbrv, altRemove) {
         type: String,
         onChange: () => patchCurrencies(),
     });
+    game.settings.register(WORLD_CURRENCY_5E, settingName + "Icon", {
+        name: originalName + " New Icon File Path",
+        scope: "world",
+        config: !isRemoved,
+        default: "",
+        type: String,
+        onChange: () => patchCurrencies(),
+    });
 }
 
 /** Registers settings to change names of abbreviations of currencies */

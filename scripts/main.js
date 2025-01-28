@@ -19,8 +19,7 @@ Hooks.on("ready", function () {
 
 Hooks.on("renderActorSheet5eCharacter", (sheet, html) => {
     core.removeCurrencies(html);
-    // This is only necessary for tidy5e.
-    compatibility.alterCharacterCurrency(html);
+    core.changeCurrencyIcons(html);
     console.log("world-currency-5e | Altered character sheet");
 });
 
