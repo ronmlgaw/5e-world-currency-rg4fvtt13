@@ -3,7 +3,7 @@
     "title": "World Currency for D&D 5e",
     "description": "Use currencies unique to your world in D&D 5E. Updated for Foundry v12 and dnd5e v4",
     "authors": [{ "name": "cstby" }, { "name": "cAPKck" }],
-    "version": "4.0.1",
+    "version": "4.0.2",
     "library": "false",
     "compatibility": {
         "minimum": "12",

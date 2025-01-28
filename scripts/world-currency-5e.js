@@ -162,35 +162,35 @@ function changeCurrencyIcon(html, currency, icon) {
 }
 
 function changeCurrencyIcons(html) {
-    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.CP) != "") {
+    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.CP) != "-") {
         changeCurrencyIcon(
             html,
             "cp",
             game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.CP)
         );
     }
-    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.SP) != "") {
+    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.SP) != "-") {
         changeCurrencyIcon(
             html,
             "sp",
             game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.SP)
         );
     }
-    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.EP) != "") {
+    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.EP) != "-") {
         changeCurrencyIcon(
             html,
             "ep",
             game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.EP)
         );
     }
-    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.GP) != "") {
+    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.GP) != "-") {
         changeCurrencyIcon(
             html,
             "gp",
             game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.GP)
         );
     }
-    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.PP) != "") {
+    if (game.settings.get(WORLD_CURRENCY_5E, ALT_ICON.PP) != "-") {
         changeCurrencyIcon(
             html,
             "pp",
