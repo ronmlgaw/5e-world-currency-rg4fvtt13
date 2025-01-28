@@ -1,5 +1,7 @@
 <h1 align="center">World Currency 5e module for Foundry VTT</h1>
 
+:warning: Readme needs updating.
+
 <p align="center">
 <img src="https://gitlab.com/uploads/-/system/project/avatar/9199873/fvtt-solid-512.png?width=64" />
 </p>
@@ -15,7 +17,7 @@ This [FoundryVTT](https://foundryvtt.com) module allows you to use your world's 
 ## Installation
 
 1. On Foundry's "Add-on Modules" tab, click "Install Module"
-2. At the bottom, paste `https://raw.githubusercontent.com/cstby/foundryvtt-world-currency-5e/master/module.json` into the "Manifest URL" field and click "install".
+2. At the bottom, paste `https://raw.githubusercontent.com/cAPKck/5e-world-currency/master/module.json` into the "Manifest URL" field and click "install".
 
 ## Features
 
