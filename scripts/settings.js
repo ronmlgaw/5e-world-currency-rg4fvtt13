@@ -126,7 +126,7 @@ function registerSettings() {
     registerSettingsConverter();
     registerSettingsExchangeRates();
     registerSettingsStandard();
-    console.log("world-currency-5e | Registered Settings");
+    console.log(`${WORLD_CURRENCY_5E} | Registered Settings`);
 }
 
 export { registerSettings };

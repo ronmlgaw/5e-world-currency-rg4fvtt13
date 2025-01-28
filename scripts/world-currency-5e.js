@@ -2,7 +2,7 @@
  * Core functions for patching currencies configuration.
  */
 
-const WORLD_CURRENCY_5E = "world-currency-5e";
+const WORLD_CURRENCY_5E = "5e-world-currency";
 const CONVERT = {
     CP: "cpConvert",
     SP: "spConvert",
@@ -83,7 +83,6 @@ function patchCurrencies() {
         gp: {
             label: currencySettings[ALT.GP],
             abbreviation: currencySettings[ALT_ABRV.GP],
-            // Added explicit rates for easier conversion later. (see gpToStandard below.)
             conversion: currencySettings[CONVERT.GP],
         },
         ep: {
@@ -103,29 +102,19 @@ function patchCurrencies() {
         },
     };
 
-    console.log("world-currency-5e | Patched Currencies");
+    console.log(`${WORLD_CURRENCY_5E} | Patched Currencies`);
 }
 
 /** Removes the currency converter from the given character sheet. */
 function removeConvertCurrency(html) {
-    html.find('[class="currency-item convert"]')?.remove();
-    html.find('[data-action="convertCurrency"]')?.remove();
-    html.find('[title="Convert Currency"]')?.remove();
-    // tidy-sheet
-    html.find('[class="currency-item convert svelte-52d1bs"]')?.remove();
-    // D&D5e 3.0
+    // dnd5e 4
     html.find(`[class="currency"]`)?.find(`[class="item-action unbutton"]`)?.remove();
 }
 
 /** Removes specified currency from character sheet */
-function removeCurrency(html, currency) {
-    html.find(`[class="currency-item ${currency}"]`)?.remove();
-    html.find(`[class="denomination ${currency}"]`)?.remove();
-    html.find(`[name="system.currency.${currency}"]`)?.remove();
-    // tidy-sheet
-    html.find(`[class="currency-item ${currency} svelte-52d1bs"]`)?.remove();
-    // d&d5e 3.0
-    html.find(`[class="currency ${currency}"]`)?.remove();
+function removeCurrency(html, currency) {   
+    // dnd5e 4
+    html.find(`[class="currency"]`)?.find(`[aria-label="${currency}"]`)?.remove();
 }
 
 function removeCurrencies(html) {
@@ -133,19 +122,19 @@ function removeCurrencies(html) {
         removeConvertCurrency(html);
     }
     if (game.settings.get(WORLD_CURRENCY_5E, ALT_REMOVE.CP)) {
-        removeCurrency(html, "cp");
+        removeCurrency(html, "Copper");
     }
     if (game.settings.get(WORLD_CURRENCY_5E, ALT_REMOVE.SP)) {
-        removeCurrency(html, "sp");
+        removeCurrency(html, "Silver");
     }
     if (game.settings.get(WORLD_CURRENCY_5E, ALT_REMOVE.EP)) {
-        removeCurrency(html, "ep");
+        removeCurrency(html, "Electrum");
     }
     if (game.settings.get(WORLD_CURRENCY_5E, ALT_REMOVE.GP)) {
-        removeCurrency(html, "gp");
+        removeCurrency(html, "Gold");
     }
     if (game.settings.get(WORLD_CURRENCY_5E, ALT_REMOVE.PP)) {
-        removeCurrency(html, "pp");
+        removeCurrency(html, "Platinum");
     }
 }
 
