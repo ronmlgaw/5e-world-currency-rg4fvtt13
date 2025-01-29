@@ -153,7 +153,7 @@ function removeCurrencies(html) {
     }
 }
 
-/** Change currency icons in character sheet */
+/** Change currency icons in sheet */
 function changeCurrencyIcon(html, currency, icon) {
     // dnd5e 4
     for (let h of html.find(`[class="currency ${currency}"]`)) {

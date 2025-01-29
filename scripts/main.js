@@ -24,14 +24,17 @@ Hooks.on("renderActorSheet5eCharacter", (sheet, html) => {
 
 Hooks.on("renderActorSheet5eVehicle", (sheet, html) => {
     core.removeCurrencies(html);
+    core.changeCurrencyIcons(html);
     console.log("world-currency-5e | Altered vehicle sheet");
 });
 
-Hooks.on("renderItemSheet", (sheet, html, data) => {
+Hooks.on("renderItemSheet5e", (sheet, html, data) => {
+    core.changeCurrencyIcons(html);
     let standard = game.settings.get(core.WORLD_CURRENCY_5E, "Standard");
     if (!(game.user.isGM && standard == "gp")) {
         html.find('[name="system.price"]').prop("disabled", true);
-        html.find('[name="system.price"]').prop("type", "text");
-        html.find('[name="system.price"]').val(convert.formatCurrency(convert.gpToStandard(data.system.price)));
+        html.find('[name="system.price.value"]').val(convert.formatCurrency(convert.gpToStandard(data.system.price))); // Not working, html element has different name
     }
 });
+
+// TODO: Trade Window from Item Piles
