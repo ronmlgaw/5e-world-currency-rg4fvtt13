@@ -29,6 +29,7 @@ Hooks.on("renderActorSheet5eVehicle", (sheet, html) => {
 });
 
 Hooks.on("renderItemSheet5e", (sheet, html, data) => {
+    core.removeCurrencies(html);
     core.changeCurrencyIcons(html);
     let standard = game.settings.get(core.WORLD_CURRENCY_5E, "Standard");
     if (!(game.user.isGM && standard == "gp")) {
@@ -36,5 +37,7 @@ Hooks.on("renderItemSheet5e", (sheet, html, data) => {
         html.find('[name="system.price.value"]').val(convert.formatCurrency(convert.gpToStandard(data.system.price))); // Not working, html element has different name
     }
 });
+
+// TODO: Tooltip item hover
 
 // TODO: Trade Window from Item Piles

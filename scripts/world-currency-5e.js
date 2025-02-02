@@ -155,6 +155,7 @@ function removeCurrencies(html) {
 
 /** Change currency icons in sheet */
 function changeCurrencyIcon(html, currency, icon) {
+    html.styl
     // dnd5e 4
     for (let h of html.find(`[class="currency ${currency}"]`)) {
         h.style.backgroundImage = `url('${icon}')`;
