@@ -1,13 +1,13 @@
 {
-    "name": "5e-world-currency",
+    "id": "5e-world-currency-rg4fvtt13",
     "title": "World Currency for D&D 5e",
     "description": "Use currencies unique to your world in D&D 5E. Updated for Foundry v12 and dnd5e v4",
     "authors": [{ "name": "cstby" }, { "name": "cAPKck" }],
     "version": "4.0.6",
     "library": "false",
     "compatibility": {
-        "minimum": "12",
-        "verified": "12.331"
+        "minimum": "13",
+        "verified": "13.344"
     },
     "esmodules": ["scripts/main.js"],
     "scripts": [],
@@ -31,7 +31,7 @@
             }
         ]
     },
-    "url": "https://github.com/cAPKck/5e-world-currency",
-    "manifest": "https://raw.githubusercontent.com/cAPKck/5e-world-currency/master/module.json",
-    "download": "https://github.com/cAPKck/5e-world-currency/archive/master.zip"
+    "url": "https://github.com/ronmlgaw/5e-world-currency-rg4fvtt13",
+    "manifest": "https://raw.githubusercontent.com/ronmlgaw/5e-world-currency-rg4fvtt13/master/module.json",
+    "download": "https://github.com/ronmlgaw/5e-world-currency-rg4fvtt13/archive/master.zip"
 }
