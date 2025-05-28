@@ -10,12 +10,12 @@
  <img alt="GitHub Issues" src="https://img.shields.io/github/issues/cstby/foundryvtt-world-currency-5e">
 </p> -->
 
-This [FoundryVTT](https://foundryvtt.com) module allows you to use your world's homebrew currencies in D&D 5th Edition. It is forked from cstby's [World Currency 5e](https://github.com/cstby/foundryvtt-world-currency-5e) module and updated to work with the newest versions of Foundry and the dnd5e module.
+This [FoundryVTT](https://foundryvtt.com) module allows you to use your world's homebrew currencies in D&D 5th Edition. It is forked from 1st --> cstby's [World Currency 5e](https://github.com/cstby/foundryvtt-world-currency-5e) module and updated to work with the newest versions of Foundry v11 and the dnd5e module, and 2nd from --> [5e World Currency](https://github.com/cAPKck/5e-world-currency) for some worthy updates to incorporate v12 compatibility fixes
 
 ## Installation
 
 1. On Foundry's "Add-on Modules" tab, click "Install Module"
-2. At the bottom, paste `https://raw.githubusercontent.com/cAPKck/5e-world-currency/master/module.json` into the "Manifest URL" field and click "install".
+2. At the bottom, paste `https://raw.githubusercontent.com/ronmlgaw/5e-world-currency-rg4fvtt13/master/module.json` into the "Manifest URL" field and click "install".
 
 ## Features
 
@@ -54,11 +54,11 @@ World Currencies 5e works by patching the currency names and rates set by the D&
 
 ## Contributing
 
-If you run into anything unexpected or have an idea for a new feature, please [submit an issue](https://github.com/cstby/foundryvtt-world-currency-5e/issues). Merge requests are more than welcome.
+If you run into anything unexpected or have an idea for a new feature, please [submit an issue](https://github.com/ronmlgaw/5e-world-currency-rg4fvtt13/issues). Merge requests are more than welcome.
 
 ## Acknowledgements
 
-[cstby](https://github.com/cstby) for the Original World Currency 5e module
+[cstby](https://github.com/cstby) for the Original World Currency 5e module. [cAPKck](https://github.com/cAPKck) for the more recent fork with some worthy, more recent commits related to FVtt v12
 
 ## License
 
